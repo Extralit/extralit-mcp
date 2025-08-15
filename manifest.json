@@ -1,0 +1,78 @@
+{
+  "dxt_version": "0.1",
+  "name": "extralit-mcp",
+  "version": "0.0.2",
+  "description": "",
+  "long_description": "Extralit v1: Extralit Server API v1",
+  "author": {
+    "name": "Speakeasy"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "./bin/mcp-server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/bin/mcp-server.js",
+        "start",
+        "--server-url",
+        "${user_config.server_url}",
+        "--api-key-header",
+        "${user_config.api_key_header}"
+      ]
+    }
+  },
+  "display_name": "Extralit Mcp",
+  "tools": [
+    {
+      "name": "info-get-version-version-get",
+      "description": "Get Version"
+    },
+    {
+      "name": "info-get-status-status-get",
+      "description": "Get Status"
+    },
+    {
+      "name": "authentication-create-token-token-post",
+      "description": "Create Token"
+    },
+    {
+      "name": "authentication-list-providers-oauth2-providers-get",
+      "description": "List Providers"
+    },
+    {
+      "name": "authentication-get-authentication-oauth2-providers-provider-authentication-get",
+      "description": "Get Authentication"
+    },
+    {
+      "name": "authentication-get-access-token-oauth2-providers-provider-access-token-get",
+      "description": "Get Access Token"
+    },
+    {
+      "name": "settings-get-settings-settings-get",
+      "description": "Get Settings"
+    }
+  ],
+  "prompts": [],
+  "keywords": [
+      "extralit",
+      "mcp",
+      "server",
+      "api"
+    ],
+  "user_config": {
+      "server_url": {
+        "type": "string",
+        "title": "Server URL",
+        "description": "The URL of the server to connect to",
+        "required": true
+      },
+      "api_key_header": {
+        "type": "string",
+        "title": "APIKeyHeader",
+        "description": "The APIKeyHeader to use for the request",
+        "required": false,
+        "sensitive": true
+      }
+    }
+}

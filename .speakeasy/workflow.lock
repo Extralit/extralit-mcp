@@ -1,0 +1,33 @@
+speakeasyVersion: 1.605.0
+sources:
+    Extralit v1:
+        sourceNamespace: extralit-v-1
+        sourceRevisionDigest: sha256:6689fd047eccb9d42598df030ba2b518440fd44fe697455b8ec50437efac4b5c
+        sourceBlobDigest: sha256:39a94b402a1f90eaa1b82e5266b084a7ebfcf2715a2f38fd631f1b018cc7be73
+        tags:
+            - latest
+            - 0.6.0
+targets:
+    extralit-sdk:
+        source: Extralit v1
+        sourceNamespace: extralit-v-1
+        sourceRevisionDigest: sha256:6689fd047eccb9d42598df030ba2b518440fd44fe697455b8ec50437efac4b5c
+        sourceBlobDigest: sha256:39a94b402a1f90eaa1b82e5266b084a7ebfcf2715a2f38fd631f1b018cc7be73
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Extralit v1:
+            inputs:
+                - location: https://extralit-public-demo.hf.space/api/v1/openapi.json
+            transformations:
+                - filterOperations:
+                    operations: proxy_models__rest_of_path__get
+                    exclude: true
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/extralit/extralit-server/extralit-v-1
+    targets:
+        extralit-sdk:
+            target: mcp-typescript
+            source: Extralit v1

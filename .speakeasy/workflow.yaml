@@ -1,0 +1,17 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Extralit v1:
+        inputs:
+            - location: https://extralit-public-demo.hf.space/api/v1/openapi.json
+        transformations:
+            - filterOperations:
+                operations: proxy_models__rest_of_path__get
+                exclude: true
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/extralit/extralit-server/extralit-v-1
+targets:
+    extralit-sdk:
+        target: mcp-typescript
+        source: Extralit v1
