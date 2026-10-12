@@ -19,7 +19,7 @@
     "@stricli/core": "^1.1.2",
     "bun": "^1.2.12",
     "express": "^5.1.0",
-    "zod": "^3.25.7"
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@anthropic-ai/dxt": "^0.1.0",
