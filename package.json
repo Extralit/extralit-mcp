@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@anthropic-ai/dxt": "^0.1.0",
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^10.0.1",
     "@types/bun": "^1.2.13",
     "@types/express": "^5.0.1",
     "@types/node": "^22.15.20",
